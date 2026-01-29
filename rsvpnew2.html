@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Nabila & Azhan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fcfaf7;
+            color: #333;
+            text-align: center;
+            padding-bottom: 80px; /* Space for bottom nav */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3rem, 10vw, 5rem);
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Countdown Style */
+        .countdown-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .count-item { display: flex; flex-direction: column; min-width: 50px; }
+        .count-num { font-size: 1.5rem; font-weight: bold; }
+        .count-label { font-size: 0.7rem; text-transform: uppercase; }
+
+        /* Sections */
+        .section { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
+        h2 { font-family: 'Playfair Display', serif; color: #b8860b; font-size: 2.2rem; }
+        
+        .details-card {
+            background: white; padding: 40px; border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex; justify-content: space-around;
+            padding: 12px 0; box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        .nav-item {
+            text-decoration: none; color: #b8860b; font-size: 0.75rem;
+            display: flex; flex-direction: column; align-items: center;
+            transition: 0.3s;
+        }
+        .nav-icon { font-size: 1.4rem; margin-bottom: 2px; }
+        .nav-item:active { transform: scale(0.9); }
+
+        .btn {
+            display: inline-block; padding: 15px 40px;
+            background-color: #b8860b; color: white;
+            text-decoration: none; border-radius: 30px;
+            margin-top: 20px; transition: transform 0.3s, background 0.3s;
+        }
+        .btn:hover { background-color: #966d09; }
+        
+        #qrcode-section img { 
+            max-width: 220px; 
+            margin-top: 20px; 
+            border: 8px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body id="home">
+
+    <section class="hero">
+        <div class="sub-text" style="letter-spacing: 3px; text-transform: uppercase;">The Wedding of</div>
+        <h1>Nabila & Azhan</h1>
+        
+        <div class="countdown-container">
+            <div class="count-item"><span class="count-num" id="days">00</span><span class="count-label">Days</span></div>
+            <div class="count-item"><span class="count-num" id="hours">00</span><span class="count-label">Hrs</span></div>
+            <div class="count-item"><span class="count-num" id="mins">00</span><span class="count-label">Mins</span></div>
+            <div class="count-item"><span class="count-num" id="secs">00</span><span class="count-label">Secs</span></div>
+        </div>
+    </section>
+
+    <section class="section" id="location">
+        <h2>Location</h2>
+        <div class="details-card">
+            <span style="font-weight:700; font-size: 1.3rem; display: block; margin-bottom: 10px;">Royale Avenue Hall</span>
+            <p>123 Royale Avenue Hall, Seremban</p>
+            <a href="https://share.google/MFCVhLSCguozeODQ6" target="_blank" class="btn">Open in Google Maps</a>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: #f4efea;" id="rsvp">
+        <h2>RSVP</h2>
+        <p>Your presence is our greatest honor. Please let us know if you can attend!</p>
+        <a href="https://wa.me/601155050664?text=Assalamualaikum!%20I%20will%20be%20attending%20the%20wedding%20of%20Nabila%20and%20Azhan." class="btn">Confirm via WhatsApp</a>
+    </section>
+
+   <section class="section" id="qrcode-section">
+    <h2>Wedding Gift</h2>
+    <p>Your presence is gift enough, but if you wish to contribute to me, you may scan below:</p>
+    <img src="https://lh3.googleusercontent.com/d/1Fzs3eZIlzDKfDN4HiAvAfZf94VVKd0t0" alt="Wedding QR Code">
+</section>
+
+    <nav class="bottom-nav">
+        <a href="#home" class="nav-item">
+            <span class="nav-icon">🏠</span><span>Home</span>
+        </a>
+        <a href="#location" class="nav-item">
+            <span class="nav-icon">📍</span><span>Map</span>
+        </a>
+        <a href="tel:+601155050664" class="nav-item">
+            <span class="nav-icon">📞</span><span>Contact</span>
+        </a>
+        <a href="#qrcode-section" class="nav-item">
+            <span class="nav-icon">🧧</span><span>Gift</span>
+        </a>
+    </nav>
+
+    <script>
+        // Countdown Timer Logic
+        const weddingDate = new Date("Dec 12, 2026 11:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("mins").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("secs").innerText = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.querySelector(".countdown-container").innerHTML = "<h3 style='margin:0'>Happy Wedding Day!</h3>";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
